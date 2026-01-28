@@ -49,11 +49,11 @@ public class PatientController {
                 (id, patientRequestDTO);
         return ResponseEntity.ok().body(patientResponseDTO);
     }
+
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete a patient", description = "Delete an existing patient by ID")
     public ResponseEntity<Void> deletePatient(@PathVariable UUID id) {
         patientService.deletePatient(id);
         return ResponseEntity.noContent().build();
     }
-
 }
